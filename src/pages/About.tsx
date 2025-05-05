@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import "../styles/About.css"
 import ProfileImage from "../assets/my_profile.jpg"
 
@@ -9,7 +9,7 @@ const About = () => {
   const [currentLine, setCurrentLine] = useState(0)
   const [showCursor, setShowCursor] = useState(true)
 
-  const terminalLines = ["cat profile.json", "ls -la skills/", "cat certifications.txt"]
+  const terminalLines = useMemo(() => ["cat profile.json", "ls -la skills/", "cat certifications.txt"], [])
 
   const profileData = {
     name: "Patrick Okafor Chibuike",
@@ -53,7 +53,7 @@ const About = () => {
       clearInterval(typingInterval)
       clearInterval(cursorInterval)
     }
-  }, [currentLine])
+  }, [currentLine, terminalLines])
 
   return (
     <div className="about-container">

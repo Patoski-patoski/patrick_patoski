@@ -41,7 +41,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-logo">
         <Link to="/">
-          <span className="logo-text">~$ penasecurity.org</span>
+          <span className="logo-text">~$ patrick_patoski</span>
         </Link>
       </div>
       <div className="navbar-links">

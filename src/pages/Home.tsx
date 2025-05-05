@@ -6,7 +6,7 @@ import "../styles/Home.css"
 
 const Home = () => {
   const [typedText, setTypedText] = useState("")
-  const fullText = "Welcome to my Backend development portfolio."
+  const fullText = "Welcome to my portfolio website."
 
   useEffect(() => {
     let i = 0

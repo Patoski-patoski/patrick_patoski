@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import "../styles/About.css"
-import ProfileImage from "../assets/profile.jpg"
+import ProfileImage from "../assets/my_profile.jpg"
 
 const About = () => {
   const [typedText, setTypedText] = useState("")
@@ -12,10 +12,11 @@ const About = () => {
   const terminalLines = ["cat profile.json", "ls -la skills/", "cat certifications.txt"]
 
   const profileData = {
-    name: "John Doe",
-    title: "Cybersecurity Specialist & Penetration Tester",
-    bio: "I'm a cybersecurity professional with 5+ years of experience in penetration testing, vulnerability assessment, and security research.",
-    interests: ["Network Security", "Threat Intelligence", "Security Automation", "CTF Competitions"],
+    name: "Patrick Okafor Chibuike",
+    title: "Software developer & Blockchain Enthusiast",
+    location: "Nigeria, Kano",
+    bio: "I'm a Software developer and blockchain enthusiast with 3+ years of experience in developing secure software solutions",
+    interests: ["Web development", "Blockchain", "System Programming", "Artificial Intelligence", "Ethical Hacking", "Hackhathons"],
   }
 
   useEffect(() => {
@@ -31,6 +32,12 @@ const About = () => {
         if (currentLine < terminalLines.length - 1) {
           setTimeout(() => {
             setCurrentLine((prev) => prev + 1)
+            setTypedText("")
+          }, 1000)
+        } else {
+
+          setTimeout(() => {
+            setCurrentLine(0)
             setTypedText("")
           }, 1000)
         }
@@ -52,7 +59,7 @@ const About = () => {
     <div className="about-container">
       <h1 className="about-title">About Me</h1>
       <p className="about-subtitle">
-        Learn more about my background, skills, and interests in cybersecurity and technology.
+        Learn more about my background, skills, and interests in backend development and blockchain.
       </p>
 
       <div className="about-content">
@@ -60,21 +67,21 @@ const About = () => {
           <div className="profile-image-container">
             <img src={ProfileImage || "/placeholder.svg"} alt="Profile" className="profile-image" />
           </div>
-          <h2 className="profile-name">John Doe</h2>
-          <p className="profile-title">Cybersecurity Specialist</p>
+          <h2 className="profile-name">Patrick Okafor Chibuike</h2>
+          <p className="profile-title">Software developer & Blockchain Enthusiast</p>
 
           <div className="profile-details">
             <div className="detail-item">
               <h3>LOCATION</h3>
-              <p>San Francisco, CA</p>
+              <p>Nigeria, Kano</p>
             </div>
 
             <div className="detail-item">
               <h3>EDUCATION</h3>
-              <p>M.S. in Cybersecurity</p>
+              <p>B.S. in Biotechnology</p>
               <p className="detail-subtext">Stanford University, 2022</p>
-              <p>B.S. in Computer Science</p>
-              <p className="detail-subtext">MIT, 2020</p>
+              <p>Online Training and Bootcamps: Full-Stack Web Development</p>
+              <p className="detail-subtext">ALX-Africa, 2022-2023</p>
             </div>
           </div>
         </div>
@@ -91,7 +98,7 @@ const About = () => {
 
           <div className="terminal-body">
             <div className="terminal-line">
-              <span className="terminal-prompt">user@penasecurity:~$</span> {typedText}
+              <span className="terminal-prompt">user@patoski:~$</span> {typedText}
               {showCursor && <span className="terminal-cursor">_</span>}
             </div>
 

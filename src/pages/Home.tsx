@@ -6,7 +6,7 @@ import "../styles/Home.css"
 
 const Home = () => {
   const [typedText, setTypedText] = useState("")
-  const fullText = "Welcome to my cybersecurity portfolio."
+  const fullText = "Welcome to my Backend development portfolio."
 
   useEffect(() => {
     let i = 0
@@ -16,6 +16,11 @@ const Home = () => {
         i++
       } else {
         clearInterval(typingInterval)
+
+        setTimeout(() => {
+          setTypedText("")
+          i = 0;
+        }, 1000)
       }
     }, 100)
 
@@ -29,7 +34,9 @@ const Home = () => {
           <span className="typed-text">{typedText}</span>
           <span className="cursor">_</span>
         </h1>
-        <p className="hero-subtitle">Cybersecurity Specialist & Penetration Tester</p>
+        <p className="hero-subtitle">
+          Software developer & Blockchain Enthusiast
+        </p>
         <div className="hero-buttons">
           <Link to="/projects" className="hero-button primary">
             View Projects
@@ -41,8 +48,8 @@ const Home = () => {
       </div>
 
       <div className="services-section">
-        <h2 className="services-title">MY SERVICES</h2>
-        <h3 className="services-subtitle">What I Do</h3>
+        <h2 className="services-title">My expertise</h2>
+        <h3 className="services-subtitle">Services I offer</h3>
 
         <div className="services-grid">
           <div className="service-card">
@@ -51,8 +58,9 @@ const Home = () => {
             </div>
             <h3 className="service-title">Backend Development</h3>
             <p className="service-description">
-              I build robust, scalable APIs and systems using Django, FastAPI, Express, Node, MongoDB and SQL, ensuring
-              efficient and secure server-side functionality.
+              I build robust, scalable APIs and systems using Flask, Django,
+              Express, Node, MongoDB and Redis, ensuring efficient and secure
+              server-side functionality.
             </p>
           </div>
 
@@ -76,8 +84,8 @@ const Home = () => {
             </div>
             <h3 className="service-title">Database Management</h3>
             <p className="service-description">
-              I manage and optimize databases, ensuring data integrity, scalability, and high performance using SQL and
-              NoSQL solutions.
+              I manage, normalize and optimize databases, ensuring data integrity,
+              scalability, and high performance using SQL and NoSQL solutions.
             </p>
           </div>
 
@@ -87,8 +95,9 @@ const Home = () => {
             </div>
             <h3 className="service-title">Integration Services</h3>
             <p className="service-description">
-              I connect applications with third-party APIs and services, enabling interoperability and extending
-              functionality.
+              I connect applications with third-party APIs and services,
+              enabling interoperability and extending functionality through
+              seamless integration.
             </p>
           </div>
 
@@ -111,7 +120,8 @@ const Home = () => {
             </div>
             <h3 className="service-title">Microservices Architecture</h3>
             <p className="service-description">
-              I develop and deploy microservices, ensuring modularity, scalability, and efficient system communication.
+              I develop and deploy microservices, ensuring modularity,
+              scalability, and efficient system communication.
             </p>
           </div>
 
@@ -135,8 +145,8 @@ const Home = () => {
             </div>
             <h3 className="service-title">Scalable System Design</h3>
             <p className="service-description">
-              I design backend architectures to handle growing user demands with load balancing, caching, and
-              containerization.
+              I design backend architectures to handle growing user demands with
+              load balancing, caching, and containerization.
             </p>
           </div>
 
@@ -161,14 +171,15 @@ const Home = () => {
             </div>
             <h3 className="service-title">DevOps</h3>
             <p className="service-description">
-              I optimize development and deployment with CI/CD pipelines, automation, and tools like Docker, Kubernetes,
-              and Jenkins for seamless software delivery.
+              I optimize development and deployment with CI/CD pipelines,
+              automation, and tools like Docker, Kubernetes, and Github Actions for
+              seamless software delivery.
             </p>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Home

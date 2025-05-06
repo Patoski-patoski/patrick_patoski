@@ -1,26 +1,37 @@
 "use client"
-// src
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import "../styles/Home.css"
 
 const Home = () => {
   const [typedText, setTypedText] = useState("")
-  const fullText = "Welcome to my portfolio website."
+  const [showCursor, setShowCursor] = useState(true)
+  const initialText = "Welcome to my portfolio website."
+  const replacedText = "My name is Patrick and I'm a Software developer and blockchain enthusiast with 3+ years of experience in developing secure software solutions."
 
   useEffect(() => {
+    // First animation: Type out the initial text
     let i = 0
     const typingInterval = setInterval(() => {
-      if (i < fullText.length) {
-        setTypedText((prev) => prev + fullText[i])
+      if (i < initialText.length) {
+        setTypedText(initialText.substring(0, i + 1))
         i++
       } else {
         clearInterval(typingInterval)
-
+        
+        // Wait 3 seconds before replacing "my" with "Patrick's"
         setTimeout(() => {
-          setTypedText("")
-          i = 0;
-        }, 1000)
+          // Find and replace the word "my" with "Patrick's"
+          const myIndex = initialText.indexOf(" my ")
+          if (myIndex !== -1) {
+            setShowCursor(false) // Hide cursor briefly during replacement
+            
+            setTimeout(() => {
+              setTypedText(replacedText)
+              setShowCursor(true) // Show cursor again after replacement`
+            }, 200)
+          }
+        }, 3000)
       }
     }, 100)
 
@@ -32,7 +43,7 @@ const Home = () => {
       <div className="hero-section">
         <h1 className="hero-title">
           <span className="typed-text">{typedText}</span>
-          <span className="cursor">_</span>
+          {showCursor && <span className="cursor">_</span>}
         </h1>
         <p className="hero-subtitle">
           Software developer & Blockchain Enthusiast

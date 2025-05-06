@@ -69,7 +69,7 @@ const Navbar = () => {
             <WalletModalProvider>
               <div className="wallet-button-container">
                 <WalletMultiButton className="wallet-button">
-                  Send me some SOL
+                  Send me SOL
                 </WalletMultiButton>
               </div>
             </WalletModalProvider>

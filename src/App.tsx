@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Writeups from "./pages/Writeups";
-import Tools from "./pages/Tools";
+// import Tools from "./pages/Tools";
 import Contact from "./pages/Contact";
 import "./App.css";
 
@@ -20,7 +20,7 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="projects" element={<Projects />} />
             <Route path="writeups" element={<Writeups />} />
-            <Route path="tools" element={<Tools />} />
+            {/* <Route path="tools" element={<Tools />} /> */}
             <Route path="contact" element={<Contact />} />
             <Route path="*" element={<Home />} />
           </Routes>

@@ -1,42 +1,54 @@
-"use client"
-import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
-import "../styles/Home.css"
+"use client";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "../styles/Home.css";
 
 const Home = () => {
-  const [typedText, setTypedText] = useState("")
-  const [showCursor, setShowCursor] = useState(true)
-  const initialText = "Welcome to my portfolio website."
-  const replacedText = "My name is Patrick and I'm a Software developer and blockchain enthusiast with 3+ years of experience in developing secure software solutions."
+  const [typedText, setTypedText] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+
+  const texts = [
+    "I'm Patrick Okafor, a software engineer with over 3 years of experience building secure and scalable software solutions.",
+    "I transform ideas and MVPs into full-scale applications using modern tools such as Python, TypeScript, and Rust.",
+    "I continuously invest in expanding my knowledge to stay ahead in the fast-evolving technology landscape.",
+    "I specialize in delivering high-quality software that meets real-world needs with precision and efficiency.",
+  ];
 
   useEffect(() => {
-    // First animation: Type out the initial text
-    let i = 0
-    const typingInterval = setInterval(() => {
-      if (i < initialText.length) {
-        setTypedText(initialText.substring(0, i + 1))
-        i++
-      } else {
-        clearInterval(typingInterval)
-        
-        // Wait 3 seconds before replacing "my" with "Patrick's"
-        setTimeout(() => {
-          // Find and replace the word "my" with "Patrick's"
-          const myIndex = initialText.indexOf(" my ")
-          if (myIndex !== -1) {
-            setShowCursor(false) // Hide cursor briefly during replacement
-            
-            setTimeout(() => {
-              setTypedText(replacedText)
-              setShowCursor(true) // Show cursor again after replacement`
-            }, 200)
-          }
-        }, 3000)
-      }
-    }, 100)
+    let typingInterval: NodeJS.Timeout;
+    let currentIndex = 0;
 
-    return () => clearInterval(typingInterval)
-  }, [])
+    const typeText = () => {
+      const currentText = texts[currentTextIndex];
+
+      typingInterval = setInterval(() => {
+        if (currentIndex < currentText.length) {
+          setTypedText(currentText.substring(0, currentIndex + 1));
+          currentIndex++;
+        } else {
+          clearInterval(typingInterval);
+
+          // Wait 3 seconds before transitioning to the next text
+          setTimeout(() => {
+            setShowCursor(false);
+
+            setTimeout(() => {
+              currentIndex = 0;
+              setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+              setShowCursor(true);
+            }, 200);
+          }, 3000);
+        }
+      }, 100);
+    };
+
+    typeText();
+
+    return () => {
+      clearInterval(typingInterval);
+    };
+  }, [currentTextIndex]);
 
   return (
     <div className="home-container">
@@ -46,7 +58,7 @@ const Home = () => {
           {showCursor && <span className="cursor">_</span>}
         </h1>
         <p className="hero-subtitle">
-          Software developer & Blockchain Enthusiast
+          Software Engineer & Blockchain Enthusiast
         </p>
         <div className="hero-buttons">
           <Link to="/projects" className="hero-button primary">
@@ -59,19 +71,18 @@ const Home = () => {
       </div>
 
       <div className="services-section">
-        <h2 className="services-title">My expertise</h2>
-        <h3 className="services-subtitle">Services I offer</h3>
+        <h2 className="services-title">Areas of Expertise</h2>
+        <h3 className="services-subtitle">What I Offer</h3>
 
         <div className="services-grid">
           <div className="service-card">
             <div className="service-icon">
               <i className="code-icon">{"</>"}</i>
             </div>
-            <h3 className="service-title">Backend Development</h3>
+            <h3 className="service-title">Backend Engineering</h3>
             <p className="service-description">
-              I build robust, scalable APIs and systems using Flask, Django,
-              Express, Node, MongoDB and Redis, ensuring efficient and secure
-              server-side functionality.
+              I design and build robust, scalable APIs and backend systems using
+              Flask, Django, Express, Node.js, MongoDB, and Redis.
             </p>
           </div>
 
@@ -93,10 +104,10 @@ const Home = () => {
                 </svg>
               </i>
             </div>
-            <h3 className="service-title">Database Management</h3>
+            <h3 className="service-title">Database Design & Management</h3>
             <p className="service-description">
-              I manage, normalize and optimize databases, ensuring data integrity,
-              scalability, and high performance using SQL and NoSQL solutions.
+              I manage and optimize relational and NoSQL databases to ensure
+              data integrity, performance, and scalability.
             </p>
           </div>
 
@@ -104,11 +115,10 @@ const Home = () => {
             <div className="service-icon">
               <i className="api-icon">API</i>
             </div>
-            <h3 className="service-title">Integration Services</h3>
+            <h3 className="service-title">API Integration</h3>
             <p className="service-description">
-              I connect applications with third-party APIs and services,
-              enabling interoperability and extending functionality through
-              seamless integration.
+              I integrate third-party services and APIs to extend system
+              functionality and enhance interoperability.
             </p>
           </div>
 
@@ -131,8 +141,8 @@ const Home = () => {
             </div>
             <h3 className="service-title">Microservices Architecture</h3>
             <p className="service-description">
-              I develop and deploy microservices, ensuring modularity,
-              scalability, and efficient system communication.
+              I build and deploy microservice-based systems that emphasize
+              modularity, scalability, and ease of maintenance.
             </p>
           </div>
 
@@ -154,10 +164,10 @@ const Home = () => {
                 </svg>
               </i>
             </div>
-            <h3 className="service-title">Scalable System Design</h3>
+            <h3 className="service-title">System Architecture</h3>
             <p className="service-description">
-              I design backend architectures to handle growing user demands with
-              load balancing, caching, and containerization.
+              I design high-performance systems with support for scaling, load
+              balancing, caching, and fault tolerance.
             </p>
           </div>
 
@@ -180,17 +190,16 @@ const Home = () => {
                 </svg>
               </i>
             </div>
-            <h3 className="service-title">DevOps</h3>
+            <h3 className="service-title">DevOps & Automation</h3>
             <p className="service-description">
-              I optimize development and deployment with CI/CD pipelines,
-              automation, and tools like Docker, Kubernetes, and Github Actions for
-              seamless software delivery.
+              I streamline development workflows through CI/CD pipelines and
+              automation tools like Docker, Kubernetes, and GitHub Actions.
             </p>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default Home
+export default Home;

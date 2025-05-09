@@ -32,7 +32,6 @@ const Contact = () => {
     setErrorMessage(null);
 
     try {
-      // Replace with your actual backend URL
       const BACKEND_URL =
         import.meta.env.VITE_API_URL || "http://localhost:3000";
 

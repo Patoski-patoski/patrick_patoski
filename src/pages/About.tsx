@@ -11,16 +11,16 @@ const About = () => {
   const [showOutput, setShowOutput] = useState(false);
 
   const terminalLines = useMemo(
-    () => ["cat profile.json", "ls -la skills/", "cat certifications.txt"],
+    () => ["cat profile.json", "ls -la skills", "cat certifications.txt"],
     []
   );
 
   const profileData = {
     name: "Patrick Okafor Chibuike",
-    title: "Software developer & Blockchain Enthusiast",
+    title: "Software & Blockchain Enthusiast",
     location: "Nigeria, Kano",
     bio: "I'm a Software developer and blockchain enthusiast with 3+ years of experience in developing secure software solutions",
-    skills: ["JavaScript", "TypeScript", "Python", "Rust", "React", "SQL"],
+    skills: ["TypeScript", "Python", "Rust", "React", "SQL", "Redis", "Docker"],
     interests: [
       "Web development",
       "Blockchain",
@@ -33,8 +33,8 @@ const About = () => {
 
   const skillsOutput = [
     "total 7",
-    `drwxr-xr-x  2 patrick developers  4096 ${new Date().getFullYear()}`,
-    `drwxr-xr-x 10 patrick developers  4096 ${new Date().getFullYear()}`,
+    `drwxr-xr-x  2 patrick developers  4096 February 2 2025 MySQL.db`,
+    `drwxr-xr-x 10 patrick developers  4096 March 30 2025 DockerfIle`,
     `-rw-r--r--  1 patrick developers   876 May 2 2025 JavaScript.js`,
     `-rw-r--r--  1 patrick developers   742 May 2 2025 TypeScript.ts`,
     `-rw-r--r--  1 patrick developers   654 May 3 2025 Python.py`,
@@ -47,7 +47,7 @@ const About = () => {
     "========== CERTIFICATIONS ==========",
     "",
     "1. ALX Software Engineering",
-    "   Issued: December 2023",
+    "   Issued: November 2024",
     "   Skills: Backend development, System programming, System design, Algorithms",
     "",
     "2. Zuri Internship Full-Stack Web Development",
@@ -62,7 +62,6 @@ const About = () => {
     "   Issued: March 2024",
     "   Skills: Prompt Engineering, NoCode tools, AI ethics, AI automations ",
     "",
-
   ];
 
    useEffect(() => {
@@ -73,7 +72,6 @@ const About = () => {
      let i = 0;
      const typingInterval = setInterval(() => {
        if (i < terminalLines[currentLine].length) {
-         // Use substring instead of appending characters to avoid text issues
          setTypedText(terminalLines[currentLine].substring(0, i + 1));
          i++;
        } else {
@@ -90,9 +88,9 @@ const About = () => {
              setCurrentLine(0);
              setTypedText("");
            }
-         }, 3000); // Longer delay to read the output
+         }, 5000); // Longer delay to read the output
        }
-     }, 50);
+     }, 80);
 
      // Cursor blinking effect
      const cursorInterval = setInterval(() => {
@@ -116,7 +114,7 @@ const About = () => {
              {JSON.stringify(profileData, null, 2)}
            </pre>
          );
-       case 1: // ls -la skills/
+       case 1: // ls -la skills
          return (
            <pre className="terminal-ls-output">{skillsOutput.join("\n")}</pre>
          );

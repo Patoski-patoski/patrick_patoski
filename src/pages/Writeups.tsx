@@ -7,28 +7,31 @@ const Writeups = () => {
     {
       id: 1,
       title: "Exploiting XSS Vulnerabilities in Modern Web Applications",
-      date: "May 15, 2023",
+      date: "May 15, 2025",
       excerpt:
         "An in-depth analysis of cross-site scripting vulnerabilities and how to prevent them in modern web frameworks.",
       tags: ["Web Security", "XSS", "JavaScript"],
+      link: "https://bloggify-s5k4.onrender.com/patrick/blogs/secure-coding-practices-for-node.js-applications",
     },
     {
       id: 2,
       title: "Secure Coding Practices for Node.js Applications",
-      date: "March 22, 2023",
+      date: "March 12, 2025",
       excerpt:
         "A comprehensive guide to writing secure code in Node.js applications, covering common vulnerabilities and mitigation strategies.",
       tags: ["Node.js", "Secure Coding", "Backend"],
+      link: "https://bloggify-s5k4.onrender.com/patrick/blogs/secure-coding-practices-for-node.js-applications",
     },
     {
       id: 3,
       title: "Breaking Down the OWASP Top 10 for 2023",
-      date: "January 10, 2023",
+      date: "January 10, 2025",
       excerpt:
         "A detailed analysis of the OWASP Top 10 security risks for web applications in 2023 and how to address them.",
       tags: ["OWASP", "Web Security", "Best Practices"],
+      link: "#"
     },
-  ]
+  ];
 
   return (
     <div className="writeups-container">
@@ -49,7 +52,7 @@ const Writeups = () => {
                   </span>
                 ))}
               </div>
-              <a href="#" className="read-more">
+              <a href={writeup.link} className="read-more">
                 Read More
               </a>
             </div>

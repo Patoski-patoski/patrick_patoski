@@ -48,7 +48,8 @@ const Home = () => {
     return () => {
       clearInterval(typingInterval);
     };
-  }, [currentTextIndex]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[currentTextIndex]);
 
   return (
     <div className="home-container">

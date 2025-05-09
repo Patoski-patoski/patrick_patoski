@@ -1,38 +1,40 @@
-"use client"
-
 import "../styles/Tools.css"
 
 const Tools = () => {
   const tools = [
     {
       id: 1,
-      name: "Password Strength Analyzer",
-      description: "A tool to analyze password strength and provide recommendations for improvement.",
+      name: "Civic Auth ",
+      description:
+        " Authentication tool that leverage a simple, flexible, and fast way to integrate authentication into your applications. With Auth, you can enable familiar sign-in options while offering embedded wallets and unlocking blockchain benefits for your users.",
       icon: "🔒",
-      link: "#",
+      link: "https://docs.civic.com/auth/",
     },
     {
       id: 2,
       name: "Network Scanner",
-      description: "Scan your network for open ports and potential security vulnerabilities.",
+      description:
+        "Scan your network for open ports and potential security vulnerabilities.",
       icon: "🔍",
       link: "#",
     },
     {
       id: 3,
       name: "Hash Generator",
-      description: "Generate secure hashes using various algorithms (MD5, SHA-1, SHA-256, etc.).",
+      description:
+        "Generate secure hashes using various algorithms (MD5, SHA-1, SHA-256, etc.).",
       icon: "🔑",
       link: "#",
     },
     {
       id: 4,
       name: "SSL Certificate Checker",
-      description: "Verify SSL certificates and check for common configuration issues.",
+      description:
+        "Verify SSL certificates and check for common configuration issues.",
       icon: "🛡️",
       link: "#",
     },
-  ]
+  ];
 
   return (
     <div className="tools-container">

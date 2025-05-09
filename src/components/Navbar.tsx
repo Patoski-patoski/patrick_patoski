@@ -1,23 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-
-import { 
-  PhantomWalletAdapter, 
-  SolflareWalletAdapter,
-  CoinbaseWalletAdapter
-} from '@solana/wallet-adapter-wallets'
-import {
-  ConnectionProvider,
-  WalletProvider,
-  // useWallet,
-  // useConnection
-} from '@solana/wallet-adapter-react'
-import {
-  WalletModalProvider,
-  WalletMultiButton
-} from '@solana/wallet-adapter-react-ui'
-import { clusterApiUrl } from '@solana/web3.js'
-import '@solana/wallet-adapter-react-ui/styles.css'
 import '../styles/Navbar.css'
 
 const Navbar = () => {
@@ -28,14 +10,6 @@ const Navbar = () => {
     setActiveLink(location.pathname)
   }, [location])
 
-  // Configure Solana wallet adapters
-  const wallets = [
-    new PhantomWalletAdapter(),
-    new SolflareWalletAdapter(),
-    new CoinbaseWalletAdapter()
-  ]
-
-  const endpoint = clusterApiUrl('devnet')
 
   return (
     <nav className="navbar">
@@ -54,9 +28,7 @@ const Navbar = () => {
         <Link to="/writeups" className={activeLink === '/writeups' ? 'active' : ''}>
           Writeups
         </Link>
-        <Link to="/tools" className={activeLink === '/tools' ? 'active' : ''}>
-          Tools
-        </Link>
+
         <Link to="/about" className={activeLink === '/about' ? 'active' : ''}>
           About
         </Link>
@@ -64,17 +36,7 @@ const Navbar = () => {
           Contact
         </Link>
         
-        <ConnectionProvider endpoint={endpoint}>
-          <WalletProvider wallets={wallets} autoConnect>
-            <WalletModalProvider>
-              <div className="wallet-button-container">
-                <WalletMultiButton className="wallet-button">
-                  Send me SOL
-                </WalletMultiButton>
-              </div>
-            </WalletModalProvider>
-          </WalletProvider>
-        </ConnectionProvider>
+      
       </div>
     </nav>
   )

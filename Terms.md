@@ -18,5 +18,4 @@
    We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting on this website.
 
 6. Governing Law
-
-These Terms are governed by the laws of **Nigeria**
+   These Terms are governed by the laws of **Nigeria**

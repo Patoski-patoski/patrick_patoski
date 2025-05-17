@@ -32,8 +32,8 @@ const Contact = () => {
     setErrorMessage(null);
 
     try {
-      const BACKEND_URL =
-        import.meta.env.VITE_API_URL || "http://localhost:3000";
+      const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
+        || "http://localhost:3000";
 
       const response = await fetch(`${BACKEND_URL}/api/contact`, {
         method: "POST",
@@ -49,7 +49,7 @@ const Contact = () => {
 
 
       if (!response.ok || !data.success) {
-        throw new Error(data.message || "Failed to send message");
+        throw new Error("Failed to send message, try again letter");
       }
 
       // Reset form

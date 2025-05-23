@@ -1,5 +1,3 @@
-"use client"
-
 import "../styles/Writeups.css"
 
 const Writeups = () => {
@@ -11,7 +9,7 @@ const Writeups = () => {
       excerpt:
         "An in-depth analysis of cross-site scripting vulnerabilities and how to prevent them in modern web frameworks.",
       tags: ["Web Security", "XSS", "JavaScript"],
-      link: "https://bloggify-s5k4.onrender.com/patrick/blogs/secure-coding-practices-for-node.js-applications",
+      link: "https://bloggify-blog.onrender.com/patrick/blogs/exploiting-xss-vulnerabilities-in-modern-web-appli",
     },
     {
       id: 2,
@@ -20,7 +18,7 @@ const Writeups = () => {
       excerpt:
         "A comprehensive guide to writing secure code in Node.js applications, covering common vulnerabilities and mitigation strategies.",
       tags: ["Node.js", "Secure Coding", "Backend"],
-      link: "https://bloggify-s5k4.onrender.com/patrick/blogs/secure-coding-practices-for-node.js-applications",
+      link: "https://bloggify-blog.onrender.com/patrick/blogs/secure-coding-practices-for-node.js-applications",
     },
     {
       id: 3,

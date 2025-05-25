@@ -28,7 +28,9 @@ const Navbar = () => {
         <Link to="/writeups" className={activeLink === '/writeups' ? 'active' : ''}>
           Writeups
         </Link>
-
+        <Link to="/tools" className={activeLink === '/tools' ? 'active' : ''}>
+          Tools & Skills
+        </Link>
         <Link to="/about" className={activeLink === '/about' ? 'active' : ''}>
           About
         </Link>

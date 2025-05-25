@@ -32,7 +32,7 @@ const Contact = () => {
     setErrorMessage(null);
 
     try {
-      const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
+      const BACKEND_URL = import.meta.env.VITE_API_URL
         || "http://localhost:3000";
 
       const response = await fetch(`${BACKEND_URL}/api/contact`, {
@@ -157,6 +157,7 @@ const Contact = () => {
                 id="message"
                 name="message"
                 rows={5}
+                placeholder="Server is curently returning 502. My cloud service for the month is exhausted and hopefully It'll be resolved by the beginning of next month "
                 value={formData.message}
                 onChange={handleChange}
                 required

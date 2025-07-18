@@ -43,11 +43,7 @@ const Contact = () => {
         body: JSON.stringify(formData),
       });
 
-
       const data = await response.json();
-      console.log("Form Data", data);
-
-
       if (!response.ok || !data.success) {
         throw new Error("Failed to send message, try again letter");
       }
@@ -157,7 +153,6 @@ const Contact = () => {
                 id="message"
                 name="message"
                 rows={5}
-                placeholder="Server is curently returning 502. My cloud service for the month is exhausted and hopefully It'll be resolved by the beginning of next month "
                 value={formData.message}
                 onChange={handleChange}
                 required

@@ -5,8 +5,35 @@ import Article from "/article.jpg";
 
 const Projects = () => {
   const projects = [
-    {
+   {
       id: 1,
+      title: "MemeAI Orchestrator",
+      description:
+        " AI-powered agent built with the Mastra framework that allows users to search for internet memes, retrieve meme templates, and get engaging descriptions and usage information about popular memes.",
+      technologies: [
+        "Playwright",
+        "Mastra",
+        "Nosana",
+        "TypeScript",
+      ],
+      image: "/meme.jpg",
+      github: "https://github.com/Patoski-patoski/MemeAI-Orchestrator",
+    },
+   {
+      id: 2,
+      title: "Twitter-projectrugguard-bot",
+      description:
+        "A comprehensive Twitter bot that analyzes account trustworthiness for the Solana DeFi community.",
+      technologies: [
+        "Crypto API",
+        "Twitter(X) API",
+        "Python",
+      ],
+      image: "/xbot.jpg",
+      github: "https://github.com/Patoski-patoski/twitter_bot_projectruggaurd",
+    },
+    {
+      id: 3,
       title: "Bloggify",
       description:
         "Bloggify is a full-stack blogging application that allows users to create, manage, and share blog posts. Built with a focus on simplicity and usability.",
@@ -15,7 +42,7 @@ const Projects = () => {
       github: "https://github.com/Patoski-patoski/bloggify",
     },
     {
-      id: 2,
+      id: 4,
       title: "vybe_telegram_cryptobot",
       description:
         "A functional Telegram bot using Vybe APIs for actionable, real-time crypto insights, linking users to AlphaVybe for deeper analytics.",
@@ -31,7 +58,7 @@ const Projects = () => {
       github: "https://github.com/Patoski-patoski/vybe_telegram_cryptobot",
     },
     {
-      id: 3,
+      id: 5,
       title: "C commandline shell ",
       description:
         "Built an UNIX shell that executes commands, handles pipes, and manages processes, enhancing command-line interface functionality.",
@@ -40,7 +67,7 @@ const Projects = () => {
       github: "https://github.com/Patoski-patoski/simple_shell",
     },
     {
-      id: 4,
+      id: 6,
       title: "C printf function",
       description:
         "Create a simple replica of the standard printf function in C. This function handle various format specifiers and flags, allowing for formatted output similar to the standard printf function.",
@@ -49,7 +76,7 @@ const Projects = () => {
       github: "https://github.com/DeyonOba/printf",
     },
     {
-      id: 5,
+      id: 7,
       title: "Soldash",
       description:
         "A solana wallet dashboard that allows users to manage their crypto wallets, send and receive funds, and view transaction history.",
@@ -58,7 +85,7 @@ const Projects = () => {
       github: "https://github.com/patoski-patoski/soldash",
     },
     {
-      id: 6,
+      id: 8,
       title: "copperx-payout-bot",
       description:
         "A Telegram bot for Copperx Payout that allows users to - manage their crypto wallets - send funds, and - receive notifications.",
@@ -72,6 +99,7 @@ const Projects = () => {
       image: "/copperxlogo.jpg",
       github: "https://github.com/Patoski-patoski/copperx-payout-bot",
     },
+   
   ];
 
   return (

@@ -7,7 +7,7 @@ const Projects = () => {
   const projects = [
    {
       id: 1,
-      title: "MemeAI Orchestrator",
+      title: "MemeStram Agent",
       description:
         " AI-powered agent built with the Mastra framework that allows users to search for internet memes, retrieve meme templates, and get engaging descriptions and usage information about popular memes.",
       technologies: [
@@ -17,7 +17,7 @@ const Projects = () => {
         "TypeScript",
       ],
       image: "/meme.jpg",
-      github: "https://github.com/Patoski-patoski/MemeAI-Orchestrator",
+      github: "https://github.com/Patoski-patoski/MemeStream-Agent",
     },
    {
       id: 2,

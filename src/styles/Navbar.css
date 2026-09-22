@@ -69,6 +69,20 @@
     background-color: var(--accent-secondary) !important;
 }
 
+.resume-button {
+    background-color: var(--accent-primary);
+    color: white !important;
+    border-radius: 4px;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.resume-button:hover {
+    background-color: var(--accent-secondary);
+    color: white !important;
+}
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;

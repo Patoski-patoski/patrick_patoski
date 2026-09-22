@@ -4,167 +4,317 @@ import "../styles/Tools.css";
 
 const Tools = () => {
   const tools = [
+    // Languages
     {
       id: 1,
+      name: "TypeScript",
       description:
-        "Node.js is an open-source, cross-platform runtime environment that allows developers to execute JavaScript code on the server side. It is built on the V8 JavaScript engine used in Google Chrome and is designed to build scalable network applications.",
-      icon: "https://img.shields.io/badge/Nodejs-339933?style=for-the-badge&logo=nodedotjs&logoColor=white",
-      link: "https://nodejs.org",
+        "Primary language across Zephyr, Okaform, and Sentinel — strict mode with zero-any tolerance, TypeBox validation, and typed domain errors.",
+      icon: "https://skillicons.dev/icons?i=ts",
+      link: "https://www.typescriptlang.org",
     },
     {
       id: 2,
+      name: "Rust",
       description:
-        "Next.js is a React framework that enables server-side rendering, static site generation, and other performance optimizations for React applications.",
-      icon: "https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white",
-      link: "https://nextjs.org",
-    },
-    {
-      id: 3,
-      description:
-        "React is a JavaScript library for building user interfaces, particularly single-page applications where you need a fast, interactive user experience.",
-      icon: "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
-      link: "https://reactjs.org",
-    },
-    {
-      id: 4,
-      description:
-        "Rust is a systems programming language focused on safety, speed, and concurrency. It prevents segfaults and guarantees thread safety.",
-      icon: "https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white",
+        "Anchor programs and systems work — Zephyr vault PDAs, Okaform escrow instructions, and high-assurance on-chain state machines.",
+      icon: "https://skillicons.dev/icons?i=rust",
       link: "https://www.rust-lang.org",
     },
     {
-      id: 5,
+      id: 3,
+      name: "Python",
       description:
-        "Express.js is a fast, unopinionated, minimalist web framework for Node.js that provides a robust set of features for web and mobile applications.",
-      icon: "https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white",
-      link: "https://expressjs.com",
+        "TCP search server (100+ concurrent clients, 7–15ms queries), ProjectRUGGUARD risk bot for 2,000+ users, and automation tooling.",
+      icon: "https://skillicons.dev/icons?i=py",
+      link: "https://www.python.org",
+    },
+    {
+      id: 4,
+      name: "JavaScript",
+      description:
+        "Interactive frontends and Node services — the base language behind the React dashboards and Express APIs.",
+      icon: "https://skillicons.dev/icons?i=js",
+      link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    },
+    {
+      id: 5,
+      name: "Bash",
+      description:
+        "Shell automation, deployment scripts, and system administration across Linux servers and CI pipelines.",
+      icon: "https://skillicons.dev/icons?i=bash",
+      link: "https://www.gnu.org/software/bash/",
     },
     {
       id: 6,
+      name: "C",
       description:
-        "Docker is a platform for developing, shipping, and running applications in containers, ensuring consistency across different environments.",
-      icon: "https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white",
-      link: "https://www.docker.com",
+        "Systems programming foundation — UNIX shell, printf replica, and low-level protocol understanding behind the TCP server work.",
+      icon: "https://skillicons.dev/icons?i=c",
+      link: "https://en.cppreference.com/w/c",
     },
+    // Blockchain
     {
       id: 7,
+      name: "Solana",
       description:
-        "Flask is a lightweight WSGI web application framework in Python, designed to make getting started quick and easy.",
-      icon: "https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white",
-      link: "https://flask.palletsprojects.com",
+        "Non-custodial PDA vaults, SOL escrow, SIWS auth, ALTs-batched payouts, and sub-block indexers across Zephyr and Okaform.",
+      icon: "https://img.shields.io/badge/Solana-9945FF?style=for-the-badge&logo=solana&logoColor=white",
+      link: "https://solana.com",
     },
     {
       id: 8,
+      name: "Anchor",
       description:
-        "Socket.IO enables real-time, bidirectional and event-based communication between web clients and servers.",
+        "Full program lifecycle — 6-instruction Okaform escrow program with 25+ integration tests, 5-PDA Zephyr governance without redeploys.",
+      icon: "https://img.shields.io/badge/Anchor-000000?style=for-the-badge&logoColor=white",
+      link: "https://www.anchor-lang.com",
+    },
+    // Backend
+    {
+      id: 9,
+      name: "Node.js",
+      description:
+        "Runtime behind every backend here — Express telemedicine APIs, NestJS microservices, and real-time ingestion pipelines.",
+      icon: "https://skillicons.dev/icons?i=nodejs",
+      link: "https://nodejs.org",
+    },
+    {
+      id: 10,
+      name: "NestJS",
+      description:
+        "Structured backends for Okaform, Sentinel, and AllinzucolSmart — TypeBox pipes, custom exceptions, RBAC, and 95%+ test coverage.",
+      icon: "https://skillicons.dev/icons?i=nestjs",
+      link: "https://nestjs.com",
+    },
+    {
+      id: 11,
+      name: "Bun",
+      description:
+        "Fast runtime for the NestJS services and Sentinel oracle — dev watch mode, builds, and unit-test runs.",
+      icon: "https://skillicons.dev/icons?i=bun",
+      link: "https://bun.sh",
+    },
+    {
+      id: 12,
+      name: "Express.js",
+      description:
+        "Lightweight APIs — KENEI Health telemedicine platform (-30% latency) and MemeStream agent services.",
+      icon: "https://skillicons.dev/icons?i=express",
+      link: "https://expressjs.com",
+    },
+    {
+      id: 13,
+      name: "Actix",
+      description:
+        "High-throughput Rust web services from the resume stack for systems-level HTTP workloads.",
+      icon: "https://skillicons.dev/icons?i=actix",
+      link: "https://actix.rs",
+    },
+    {
+      id: 14,
+      name: "Flask",
+      description:
+        "Lightweight Python APIs for rapid prototypes and internal tooling.",
+      icon: "https://skillicons.dev/icons?i=flask",
+      link: "https://flask.palletsprojects.com",
+    },
+    {
+      id: 15,
+      name: "Django",
+      description:
+        "Full-stack Python framework from Zuri training — ORM, auth, and admin-backed product builds.",
+      icon: "https://skillicons.dev/icons?i=django",
+      link: "https://www.djangoproject.com",
+    },
+    // Data
+    {
+      id: 16,
+      name: "PostgreSQL",
+      description:
+        "Zephyr Sharpe/AUM/ROI analytics and AllinzucolSmart RDS store — indexed queries, Prisma ORM, verifiable leaderboards.",
+      icon: "https://skillicons.dev/icons?i=postgres",
+      link: "https://www.postgresql.org",
+    },
+    {
+      id: 17,
+      name: "Prisma",
+      description:
+        "Type-safe ORM over the Zephyr analytics DB — migrations, rolling metrics, and trader rankings.",
+      icon: "https://skillicons.dev/icons?i=prisma",
+      link: "https://www.prisma.io",
+    },
+    {
+      id: 18,
+      name: "MongoDB",
+      description:
+        "Flexible form schemas and response bodies for Okaform, plus KENEI Health document stores.",
+      icon: "https://skillicons.dev/icons?i=mongodb",
+      link: "https://www.mongodb.com",
+    },
+    {
+      id: 19,
+      name: "Redis",
+      description:
+        "Caching, BullMQ queues (MemeStream 99.5% uptime), ElastiCache sessions, and rate-limiting backends.",
+      icon: "https://skillicons.dev/icons?i=redis",
+      link: "https://redis.io",
+    },
+    {
+      id: 20,
+      name: "MySQL",
+      description:
+        "Relational workloads and legacy app stores with tuned indexes and migrations.",
+      icon: "https://skillicons.dev/icons?i=mysql",
+      link: "https://www.mysql.com",
+    },
+    {
+      id: 21,
+      name: "SQLite",
+      description:
+        "Zero-config embedded store for local dev, tests, and lightweight edge persistence.",
+      icon: "https://skillicons.dev/icons?i=sqlite",
+      link: "https://www.sqlite.org",
+    },
+    // Messaging / realtime
+    {
+      id: 22,
+      name: "MQTT",
+      description:
+        "AllinzucolSmart telemetry over AWS IoT Core with mutual TLS — normalized event streams at <50ms processing latency.",
+      icon: "https://img.shields.io/badge/MQTT-660066?style=for-the-badge&logoColor=white",
+      link: "https://mqtt.org",
+    },
+    {
+      id: 23,
+      name: "Socket.IO",
+      description:
+        "Sub-second WebSocket broadcast for emergency alerts and live dashboards in the IoT platform.",
       icon: "https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socketdotio&logoColor=white",
       link: "https://socket.io",
     },
     {
-      id: 9,
+      id: 24,
+      name: "RabbitMQ",
       description:
-        "C is a general-purpose programming language that has been used for developing operating systems, embedded systems, and other applications.",
-      icon: "https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white",
-      link: "https://en.cppreference.com/w/c",
+        "Durable message queues for decoupled workers and event-driven pipelines.",
+      icon: "https://skillicons.dev/icons?i=rabbitmq",
+      link: "https://www.rabbitmq.com",
+    },
+    // Frontend
+    {
+      id: 25,
+      name: "React",
+      description:
+        "Dashboards for Zephyr vaults, Okaform form builder with live preview, and Sentinel risk radar + telemetry stream.",
+      icon: "https://skillicons.dev/icons?i=react",
+      link: "https://reactjs.org",
     },
     {
-      id: 10,
+      id: 26,
+      name: "Next.js",
       description:
-        "Bash is a Unix shell and command language, commonly used for system administration and automation tasks.",
-      icon: "https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white",
-      link: "https://www.gnu.org/software/bash/",
+        "SSR/SSG React apps with routing, caching, and performance optimizations for production frontends.",
+      icon: "https://skillicons.dev/icons?i=nextjs",
+      link: "https://nextjs.org",
     },
     {
-      id: 11,
+      id: 27,
+      name: "Tailwind CSS",
       description:
-        "Python is a high-level, interpreted programming language known for its simplicity and versatility in various domains.",
-      icon: "https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white",
-      link: "https://www.python.org",
+        "Utility-first styling across the Zephyr, Okaform, and Sentinel frontends — dark terminals to form builders.",
+      icon: "https://skillicons.dev/icons?i=tailwind",
+      link: "https://tailwindcss.com",
     },
     {
-      id: 12,
+      id: 28,
+      name: "Vite",
       description:
-        "Redis is an in-memory data structure store, used as a database, cache, message broker, and queue.",
-      icon: "https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white",
-      link: "https://redis.io",
+        "Instant-dev frontend tooling powering the React + Tailwind dashboards.",
+      icon: "https://skillicons.dev/icons?i=vite",
+      link: "https://vitejs.dev",
+    },
+    // DevOps / cloud / testing
+    {
+      id: 29,
+      name: "Docker",
+      description:
+        "Containerized services from MemeStream bots to NestJS APIs — consistent dev-to-prod environments.",
+      icon: "https://skillicons.dev/icons?i=docker",
+      link: "https://www.docker.com",
     },
     {
-      id: 13,
+      id: 30,
+      name: "AWS",
       description:
-        "MongoDB is a source-available cross-platform document-oriented database program, classified as a NoSQL database.",
-      icon: "https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white",
-      link: "https://www.mongodb.com",
+        "AllinzucolSmart on ECS Fargate + IoT Core + RDS Postgres + ElastiCache — mTLS provisioning to production deploys.",
+      icon: "https://skillicons.dev/icons?i=aws",
+      link: "https://aws.amazon.com",
     },
     {
-      id: 14,
+      id: 31,
+      name: "GitHub Actions",
       description:
-        "MySQL is an open-source relational database management system, widely used for web applications.",
-      icon: "https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white",
-      link: "https://www.mysql.com",
-    },
-    {
-      id: 15,
-      description:
-        "TypeScript is a strongly typed programming language that builds on JavaScript, adding static type definitions.",
-      icon: "https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white",
-      link: "https://www.typescriptlang.org",
-    },
-    {
-      id: 16,
-      description:
-        "JavaScript is a programming language that enables interactive web pages and is an essential part of web applications.",
-      icon: "https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black",
-      link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-    },
-    {
-      id: 17,
-      description:
-        "Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.",
-      icon: "https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white",
-      link: "https://www.djangoproject.com",
-    },
-    {
-      id: 18,
-      description:
-        "jQuery is a fast, small, and feature-rich JavaScript library that simplifies HTML document traversal and manipulation.",
-      icon: "https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white",
-      link: "https://jquery.com",
-    },
-    {
-      id: 19,
-      description:
-        "GitHub Actions is a CI/CD platform that allows you to automate your build, test, and deployment pipeline.",
-      icon: "https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white",
+        "CI/CD for tests, lint, and zero-downtime deploys (MemeStream PM2 pipeline, NestJS services).",
+      icon: "https://skillicons.dev/icons?i=githubactions",
       link: "https://github.com/features/actions",
     },
     {
-      id: 20,
+      id: 32,
+      name: "Nginx",
       description:
-        "Nginx is a web server that can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache.",
-      icon: "https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white",
+        "Reverse proxy, load balancing, and TLS termination in front of Node and Rust services.",
+      icon: "https://skillicons.dev/icons?i=nginx",
       link: "https://www.nginx.com",
     },
     {
-      id: 21,
+      id: 33,
+      name: "Grafana",
       description:
-        "Linux is a family of open-source Unix-like operating systems based on the Linux kernel.",
-      icon: "https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black",
+        "Operational dashboards — room turnaround, device health, and API latency telemetry.",
+      icon: "https://skillicons.dev/icons?i=grafana",
+      link: "https://grafana.com",
+    },
+    {
+      id: 34,
+      name: "Linux",
+      description:
+        "Daily driver — systemd services (TCP server 99.9% uptime), hardening, and server tuning.",
+      icon: "https://skillicons.dev/icons?i=linux",
       link: "https://www.linux.org",
+    },
+    {
+      id: 35,
+      name: "Jest",
+      description:
+        "200+ unit and integration tests at 95%+ coverage on the IoT platform; 78 passing on Okaform backend.",
+      icon: "https://skillicons.dev/icons?i=jest",
+      link: "https://jestjs.io",
     },
   ];
 
   return (
     <div className="tools-container">
-      <h1 className="tools-title">Security Tools</h1>
+      <h1 className="tools-title">Tools & Stack</h1>
       <p className="tools-subtitle">
-        Tools I use to help with various software engineering tasks.
+        The stack behind Zephyr, Okaform, Sentinel, and the IoT platform — from
+        Anchor programs to production APIs.
       </p>
 
       <div className="tools-grid">
         {tools.map((tool) => (
           <div key={tool.id} className="tool-card">
-                <img src={tool.icon} alt={tool.link} />
-                <br />
+            <img
+              src={tool.icon}
+              alt={tool.name}
+              className={
+                tool.icon.includes("skillicons.dev")
+                  ? "tool-skillicon"
+                  : "tool-badge"
+              }
+              loading="lazy"
+            />
+            <h3 className="tool-name">{tool.name}</h3>
             <p className="tool-description">{tool.description}</p>
             {/* <a href={tool.link} className="tool-link">
               Try Tool

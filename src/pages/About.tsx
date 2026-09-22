@@ -2,6 +2,7 @@
 import { useState, useEffect, useMemo } from "react";
 import "../styles/About.css";
 import ProfileImage from "../assets/my_profile.jpg";
+import { getYearsOfExperience } from "../utils/experience";
 
 const About = () => {
   const [typedText, setTypedText] = useState("");
@@ -10,56 +11,103 @@ const About = () => {
   const [showOutput, setShowOutput] = useState(false);
 
   const terminalLines = useMemo(
-    () => ["cat profile.json", "ls -la skills", "cat certifications.txt"],
+    () => [
+      "cat profile.json",
+      "ls -la skills",
+      "cat certifications.txt",
+      "cat experience.txt",
+    ],
     []
   );
 
+  const yearsOfExperience = useMemo(() => getYearsOfExperience(), []);
+
   const profileData = {
     name: "Patrick Okafor Chibuike",
-    title: "Software & Blockchain Enthusiast",
+    title: "Lead Backend & Solana Smart Contract Engineer",
     location: "Nigeria, Kano",
-    bio: "I'm a Software developer and blockchain enthusiast with 3+ years of experience in developing secure software solutions",
-    skills: ["TypeScript", "Python", "Rust", "React", "SQL", "Redis", "Docker"],
+    bio: `Full-stack Software Engineer with ${yearsOfExperience}+ years building high-performance production systems — Solana protocols, NestJS microservices, and real-time IoT platforms`,
+    skills: [
+      "TypeScript",
+      "Rust",
+      "Python",
+      "Solana/Anchor",
+      "NestJS",
+      "Node.js",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "MQTT",
+      "Docker",
+      "AWS",
+    ],
     interests: [
-      "Web development",
-      "Blockchain",
-      "System Programming",
-      "Artificial Intelligence",
-      "Ethical Hacking",
+      "Solana Protocols",
+      "AI Agents",
+      "IoT Systems",
+      "Graph Analytics",
+      "System Architecture",
       "Hackathons",
     ],
   };
 
   const skillsOutput = [
-    "total 7",
-    `drwxr-xr-x  2 patrick developers  4096 February 2 2025 MySQL.db`,
-    `drwxr-xr-x 10 patrick developers  4096 March 30 2025 DockerfIle`,
-    `-rw-r--r--  1 patrick developers   876 May 2 2025 JavaScript.js`,
-    `-rw-r--r--  1 patrick developers   742 May 2 2025 TypeScript.ts`,
-    `-rw-r--r--  1 patrick developers   654 May 3 2025 Python.py`,
-    `-rw-r--r--  1 patrick developers   512 Apr 28 2025 Rust.rs`,
-    `-rw-r--r--  1 patrick developers   428 Apr 25 2025 C.c`,
-    `-rw-r--r--  1 patrick developers   512 May 5 2025 React.ts`,
+    "total 12",
+    `-rw-r--r--  1 patrick developers   742 Sep 7 2026 TypeScript.ts`,
+    `-rw-r--r--  1 patrick developers   654 Sep 7 2026 Rust.rs`,
+    `-rw-r--r--  1 patrick developers   690 Sep 7 2026 Solana_Anchor.sol`,
+    `-rw-r--r--  1 patrick developers   678 Sep 7 2026 NestJS.ts`,
+    `-rw-r--r--  1 patrick developers   654 Sep 7 2026 Python.py`,
+    `-rw-r--r--  1 patrick developers   640 Sep 7 2026 NodeJS.js`,
+    `drwxr-xr-x  2 patrick developers  4096 Aug 28 2026 PostgreSQL.db`,
+    `drwxr-xr-x  2 patrick developers  4096 Aug 28 2026 MongoDB.db`,
+    `-rw-r--r--  1 patrick developers   512 Aug 28 2026 Redis.cache`,
+    `-rw-r--r--  1 patrick developers   498 Aug 28 2026 MQTT.mq`,
+    `drwxr-xr-x 10 patrick developers  4096 Aug 22 2026 DockerfIle`,
+    `-rw-r--r--  1 patrick developers   512 Aug 22 2026 React.ts`,
   ];
 
   const certifications = [
     "========== CERTIFICATIONS ==========",
     "",
-    "1. ALX Software Engineering",
+    "1. Solana/Rust Developer — Encode",
+    "   Issued: November 2025",
+    "   Skills: Rust, Anchor, PDAs, SPL, Jupiter, Pyth",
+    "",
+    "2. ALX Software Engineering",
     "   Issued: November 2024",
     "   Skills: Backend development, System programming, System design, Algorithms",
     "",
-    "2. Zuri Internship Full-Stack Web Development",
-    "   Issued: August 2022",
-    "   Skills: DJANGO, API development, Database management",
+    "3. ALX AI Starter Kit",
+    "   Issued: 2025",
+    "   Skills: Prompt Engineering, NoCode tools, AI ethics, AI automations",
     "",
-    "3. ALX Backend specialization",
+    "4. ALX Backend specialization",
     "   Issued: February 2024",
     "   Skills: Server architecture, Microservices, Cloud deployment",
     "",
-    "4. ALXAISK, AI Starter Kit",
-    "   Issued: March 2024",
-    "   Skills: Prompt Engineering, NoCode tools, AI ethics, AI automations ",
+    "5. Zuri Internship Full-Stack Web Development",
+    "   Issued: August 2022",
+    "   Skills: DJANGO, API development, Database management",
+    "",
+  ];
+
+  const experience = [
+    "========== EXPERIENCE ==========",
+    "",
+    "1. Lead Backend & IoT Cloud Engineer — AllinzucolSmart Lab",
+    "   Aug 2026 – Present | NestJS/TypeScript, Bun, AWS, MQTT, PostgreSQL",
+    "   IoT hospitality platform: mTLS ingestion (<50ms), emergency alerts,",
+    "   room FSMs, 6-tier RBAC, 95%+ coverage over 200+ tests.",
+    "",
+    "2. Lead Backend & Smart Contract Engineer — Zephyr Protocol",
+    "   Jan 2026 – Present | Rust/Anchor, Node.js/TypeScript",
+    "   Non-custodial PDA vaults, 16x RPC latency cut (14ms → 0.88ms),",
+    "   Pyth/Switchboard + Jupiter V6, sub-block indexer, Prisma analytics.",
+    "",
+    "3. Backend Engineer — KENEI Health",
+    "   Dec 2024 – Mar 2025 | Node.js/Express, MongoDB",
+    "   Telemedicine APIs, -30% response times, -40% onboarding time.",
     "",
   ];
 
@@ -117,15 +165,21 @@ const About = () => {
          return (
            <pre className="terminal-ls-output">{skillsOutput.join("\n")}</pre>
          );
-       case 2: // cat certifications.txt
-         return (
-           <pre className="terminal-certifications">
-             {certifications.join("\n")}
-           </pre>
-         );
-       default:
-         return null;
-     }
+        case 2: // cat certifications.txt
+          return (
+            <pre className="terminal-certifications">
+              {certifications.join("\n")}
+            </pre>
+          );
+        case 3: // cat experience.txt
+          return (
+            <pre className="terminal-certifications">
+              {experience.join("\n")}
+            </pre>
+          );
+        default:
+          return null;
+      }
    };
 
   return (
@@ -133,7 +187,7 @@ const About = () => {
       <h1 className="about-title">About Me</h1>
       <p className="about-subtitle">
         Learn more about my background, skills, and interests in backend
-        development and blockchain.
+        systems, Solana, AI agents, and IoT.
       </p>
 
       <div className="about-content">
@@ -147,8 +201,15 @@ const About = () => {
           </div>
           <h2 className="profile-name">Patrick Okafor Chibuike</h2>
           <p className="profile-title">
-            Software developer & Blockchain developer
+            Lead Backend & Solana Smart Contract Engineer
           </p>
+          <a
+            href="/Patrick_Okafor_Resume.pdf"
+            download="Patrick_Okafor_Resume.pdf"
+            className="resume-download"
+          >
+            Download Resume
+          </a>
 
           <div className="profile-details">
             <div className="detail-item">

@@ -4,8 +4,56 @@ import Article from "/article.jpg";
 
 
 const Projects = () => {
-  const projects = [
-   {
+  type Project = {
+    id: number;
+    title: string;
+    description: string;
+    technologies: string[];
+    image: string;
+    github?: string;
+    live?: string;
+    status?: string;
+  };
+
+  const projects: Project[] = [
+    {
+      id: 12,
+      title: "AI Room Manager (IoT)",
+      description:
+        "Enterprise IoT hospitality platform (in active development) — I own the NestJS/Bun backend: MQTT mTLS ingestion at <50ms, emergency alert engine over Socket.IO, room lifecycle FSMs, 6-tier RBAC, and Prisma/PostgreSQL persistence.",
+      technologies: ["NestJS", "Bun", "MQTT", "PostgreSQL", "Prisma", "Socket.IO"],
+      image: "/iot.png",
+      status: "In Progress",
+    },
+    {
+      id: 9,
+      title: "Zephyr",
+      description:
+        "Decentralized copy-trading platform on Solana — Master/Copier vaults via Anchor PDAs, real-time Helius indexer, tiered leaderboards and execution engine.",
+      technologies: ["Solana", "Anchor", "Rust", "Express", "Prisma", "React"],
+      image: "/zephyr.png",
+      live: "https://app.zephyrlabs.gg/",
+    },
+    {
+      id: 10,
+      title: "Okaform",
+      description:
+        "Sybil-resistant survey platform on Solana — SOL escrow vaults, wallet-age/balance and funding-graph checks, on-chain reputation badges and weighted payouts.",
+      technologies: ["Solana", "Anchor", "NestJS", "MongoDB", "React"],
+      image: "/okaform.svg",
+      github: "https://github.com/Patoski-patoski/okaform",
+      live: "https://okaform.vercel.app",
+    },
+    {
+      id: 11,
+      title: "Sentinel Oracle",
+      description:
+        "Autonomous on-chain risk oracle for AI trading agents — CognoDB graph detection of wash rings, Sybil farms and peeling chains, monetized via HTTP 402 Moove micro-payments.",
+      technologies: ["NestJS", "Bun", "CognoDB", "Solana", "x402", "React"],
+      image: "/sentinel.png",
+      github: "https://github.com/Patoski-patoski/sentinel-oracle",
+    },
+    {
       id: 1,
       title: "MemeStram Agent",
       description:
@@ -115,6 +163,9 @@ const Projects = () => {
             </div>
             <div className="project-content">
               <h2 className="project-title">{project.title}</h2>
+              {project.status && (
+                <span className="project-status">{project.status}</span>
+              )}
               <p className="project-description">{project.description}</p>
               <div className="project-technologies">
                 {project.technologies.map((tech, index) => (
@@ -123,11 +174,30 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-              <div className="project-links">
-                <a href={project.github} className="project-link">
-                  GitHub
-                </a>
-              </div>
+              {(project.github || project.live) && (
+                <div className="project-links">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      className="project-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub
+                    </a>
+                  )}
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      className="project-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Live Demo
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         ))}

@@ -1,5 +1,6 @@
-import React, { useState, type FormEvent } from "react";
+import React, { useState, useMemo, type FormEvent } from "react";
 import "../styles/Contact.css";
+import { getYearsOfExperience } from "../utils/experience";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +15,7 @@ const Contact = () => {
     null
   );
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const yearsOfExperience = useMemo(() => getYearsOfExperience(), []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -71,7 +73,7 @@ const Contact = () => {
     <div className="contact-container">
       <h1 className="contact-title">Contact Me</h1>
       <p className="contact-subtitle">
-        Have a question or want to work together? Feel free to reach out.
+        {`Backend & Solana engineer with ${yearsOfExperience}+ years in production systems — have a question or want to work together? Feel free to reach out.`}
       </p>
 
       <div className="contact-content">

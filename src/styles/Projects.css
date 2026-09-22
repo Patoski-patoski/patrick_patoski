@@ -53,6 +53,19 @@
 
 .project-title {
     font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-status {
+    display: inline-block;
+    background-color: rgba(20, 241, 149, 0.12);
+    color: #14f195;
+    border: 1px solid rgba(20, 241, 149, 0.4);
+    padding: 0.15rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     margin-bottom: 1rem;
 }
 

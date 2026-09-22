@@ -37,6 +37,13 @@ const Navbar = () => {
         <Link to="/contact" className={activeLink === '/contact' ? 'active' : ''}>
           Contact
         </Link>
+        <a
+          href="/Patrick_Okafor_Resume.pdf"
+          download="Patrick_Okafor_Resume.pdf"
+          className="resume-button"
+        >
+          Resume
+        </a>
         
       
       </div>

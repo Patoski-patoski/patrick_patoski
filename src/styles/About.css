@@ -51,7 +51,23 @@
 
 .profile-title {
     color: var(--accent-primary);
+    margin-bottom: 1.5rem;
+}
+
+.resume-download {
+    display: inline-block;
+    background-color: var(--accent-primary);
+    color: white;
+    border-radius: 4px;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.9rem;
     margin-bottom: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+.resume-download:hover {
+    background-color: var(--accent-secondary);
+    color: white;
 }
 
 .profile-details {

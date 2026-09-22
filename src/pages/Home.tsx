@@ -1,19 +1,25 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Home.css";
+import { getYearsOfExperience } from "../utils/experience";
 
 const Home = () => {
   const [typedText, setTypedText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
-  const texts = [
-    "I'm Patrick Okafor, a software engineer with over 3 years of experience building secure and scalable software solutions.",
-    "I transform ideas and MVPs into full-scale applications using modern tools such as Python, TypeScript, and Rust.",
-    "I continuously invest in expanding my knowledge to stay ahead in the fast-evolving technology landscape.",
-    "I specialize in delivering high-quality software that meets real-world needs with precision and efficiency.",
-  ];
+  const yearsOfExperience = useMemo(() => getYearsOfExperience(), []);
+
+  const texts = useMemo(
+    () => [
+      `I'm Patrick Okafor — Software Engineer with ${yearsOfExperience}+ years shipping Zephyr copy-vaults, Okaform escrow surveys, and the Sentinel x402 risk oracle.`,
+      "I build Anchor/Rust programs, NestJS backends, and React frontends — from PDA vaults to Helius indexers.",
+      "I work at the AI × crypto edge — LLM risk synthesis, autonomous traders, and machine-to-machine payments.",
+      "I turn MVPs into production systems — secure, scalable, and built for real users.",
+    ],
+    [yearsOfExperience]
+  );
 
   useEffect(() => {
     let typingInterval: NodeJS.Timeout;
@@ -59,7 +65,7 @@ const Home = () => {
           {showCursor && <span className="cursor">_</span>}
         </h1>
         <p className="hero-subtitle">
-          Software Engineer & Blockchain Enthusiast
+          Software Engineer • Solana Builder • AI Systems
         </p>
         <div className="hero-buttons">
           <Link to="/projects" className="hero-button primary">
@@ -78,12 +84,64 @@ const Home = () => {
         <div className="services-grid">
           <div className="service-card">
             <div className="service-icon">
+              <i className="code-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"></path>
+                </svg>
+              </i>
+            </div>
+            <h3 className="service-title">Blockchain Engineering</h3>
+            <p className="service-description">
+              Solana-native development with Anchor and Rust — PDAs, SOL
+              escrow vaults, SPL flows, and Helius-powered indexers. Shipped
+              Zephyr copy-vaults, Okaform escrow + reputation, Sentinel risk
+              oracle.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon">
+              <i className="api-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                  <rect x="9" y="9" width="6" height="6"></rect>
+                  <path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"></path>
+                </svg>
+              </i>
+            </div>
+            <h3 className="service-title">AI & Autonomous Agents</h3>
+            <p className="service-description">
+              LLM-powered oracles and trading agents — Gemini risk synthesis,
+              SendAI Solana Agent Kit plugins, autonomous A2A traders, and
+              x402 pay-per-query machine payments via Moove.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon">
               <i className="code-icon">{"</>"}</i>
             </div>
             <h3 className="service-title">Backend Engineering</h3>
             <p className="service-description">
-              I design and build robust, scalable APIs and backend systems using
-              Flask, Django, Express, Node.js, MongoDB, and Redis.
+              Robust, scalable APIs and microservices with NestJS, Bun,
+              Express, and Node.js — TypeBox validation, typed domain errors,
+              and clean module boundaries built for production.
             </p>
           </div>
 
@@ -105,10 +163,11 @@ const Home = () => {
                 </svg>
               </i>
             </div>
-            <h3 className="service-title">Database Design & Management</h3>
+            <h3 className="service-title">On-Chain Data & Graph Intelligence</h3>
             <p className="service-description">
-              I manage and optimize relational and NoSQL databases to ensure
-              data integrity, performance, and scalability.
+              Wash-trade rings, Sybil clusters, and peeling chains surfaced
+              with CognoDB openCypher, live DEX ingestion, and Postgres /
+              MongoDB + Prisma persistence for dashboards and leaderboards.
             </p>
           </div>
 
@@ -116,59 +175,11 @@ const Home = () => {
             <div className="service-icon">
               <i className="api-icon">API</i>
             </div>
-            <h3 className="service-title">API Integration</h3>
+            <h3 className="service-title">API Design & Integrations</h3>
             <p className="service-description">
-              I integrate third-party services and APIs to extend system
-              functionality and enhance interoperability.
-            </p>
-          </div>
-
-          <div className="service-card">
-            <div className="service-icon">
-              <i className="microservices-icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="12" cy="12" r="3"></circle>
-                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-                </svg>
-              </i>
-            </div>
-            <h3 className="service-title">Microservices Architecture</h3>
-            <p className="service-description">
-              I build and deploy microservice-based systems that emphasize
-              modularity, scalability, and ease of maintenance.
-            </p>
-          </div>
-
-          <div className="service-card">
-            <div className="service-icon">
-              <i className="system-icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="3" y1="9" x2="21" y2="9"></line>
-                  <line x1="9" y1="21" x2="9" y2="9"></line>
-                </svg>
-              </i>
-            </div>
-            <h3 className="service-title">System Architecture</h3>
-            <p className="service-description">
-              I design high-performance systems with support for scaling, load
-              balancing, caching, and fault tolerance.
+              REST design plus third-party rails — Jupiter swaps, Helius
+              webhooks, Moove agentic payments, Telegram / X bots, and
+              Copperx / Vybe APIs with auth, retries, and observability.
             </p>
           </div>
 
@@ -191,10 +202,11 @@ const Home = () => {
                 </svg>
               </i>
             </div>
-            <h3 className="service-title">DevOps & Automation</h3>
+            <h3 className="service-title">System Architecture & DevOps</h3>
             <p className="service-description">
-              I streamline development workflows through CI/CD pipelines and
-              automation tools like Docker, Kubernetes, and GitHub Actions.
+              Microservice boundaries, caching with Redis, load balancing and
+              fault tolerance — shipped with Docker, CI/CD, and GitHub
+              Actions from devnet to production.
             </p>
           </div>
         </div>

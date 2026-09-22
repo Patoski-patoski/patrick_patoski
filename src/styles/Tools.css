@@ -40,6 +40,21 @@
     margin-bottom: 1.5rem;
 }
 
+.tool-skillicon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+    object-fit: contain;
+}
+
+.tool-badge {
+    height: 28px;
+    width: auto;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    object-fit: contain;
+}
+
 .tool-name {
     font-size: 1.5rem;
     margin-bottom: 1rem;

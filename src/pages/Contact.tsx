@@ -1,8 +1,11 @@
 import React, { useState, useMemo, type FormEvent } from "react";
 import "../styles/Contact.css";
 import { getYearsOfExperience } from "../utils/experience";
+import { useDocumentTitle } from "../utils/useDocumentTitle";
 
 const Contact = () => {
+  useDocumentTitle("Contact");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,15 +30,31 @@ const Contact = () => {
     }));
   };
 
+  const mailtoFallback = () => {
+    const subject = encodeURIComponent(formData.subject || "Inquiry from Portfolio");
+    const body = encodeURIComponent(
+      `From: ${formData.name} (${formData.email})\n\n${formData.message}`
+    );
+    window.location.href = `mailto:codesbypatrick@gmail.com?subject=${subject}&body=${body}`;
+  };
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
     setErrorMessage(null);
 
-    try {
-      const BACKEND_URL = import.meta.env.VITE_API_URL;
+    const BACKEND_URL = import.meta.env.VITE_API_URL;
 
+    // If no backend endpoint is configured, fallback directly to mail client
+    if (!BACKEND_URL) {
+      mailtoFallback();
+      setSubmitStatus("success");
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
       const response = await fetch(`${BACKEND_URL}/api/contact`, {
         method: "POST",
         headers: {
@@ -46,7 +65,7 @@ const Contact = () => {
 
       const data = await response.json();
       if (!response.ok || !data.success) {
-        throw new Error("Failed to send message, try again letter");
+        throw new Error("Failed to send message, try again later");
       }
 
       // Reset form
@@ -176,8 +195,17 @@ const Contact = () => {
 
             {submitStatus === "error" && (
               <div className="submit-error">
-                {errorMessage ||
-                  "Failed to send message. Please try again later."}
+                <p>
+                  {errorMessage ||
+                    "Failed to send message. Please try again later."}
+                </p>
+                <button
+                  type="button"
+                  onClick={mailtoFallback}
+                  className="fallback-email-btn"
+                >
+                  Send directly via Email App ✉️
+                </button>
               </div>
             )}
           </form>

@@ -1,6 +1,8 @@
 import "../styles/Writeups.css"
+import { useDocumentTitle } from "../utils/useDocumentTitle";
 
 const Writeups = () => {
+  useDocumentTitle("Writeups");
   const writeups = [
     {
       id: 2,

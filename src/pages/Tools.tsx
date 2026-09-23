@@ -1,8 +1,10 @@
 "use client";
 
 import "../styles/Tools.css";
+import { useDocumentTitle } from "../utils/useDocumentTitle";
 
 const Tools = () => {
+  useDocumentTitle("Tools & Stack");
   const tools = [
     // Languages
     {

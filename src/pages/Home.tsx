@@ -211,6 +211,29 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      <div className="business-section">
+        <h2 className="services-title">For Business Owners</h2>
+        <h3 className="services-subtitle">Need a website? Let's talk.</h3>
+        <p className="business-description">
+          No jargon — I build fast, modern websites for businesses: company
+          sites, online stores that receive payments, and landing pages that
+          bring customers. Short projects, quick delivery.
+        </p>
+        <div className="business-buttons">
+          <a
+            href="https://wa.me/2348153551975?text=Hi%20Patrick%2C%20I%20need%20a%20website%20for%20my%20business."
+            className="hero-button primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Chat on WhatsApp
+          </a>
+          <Link to="/contact" className="hero-button secondary">
+            Contact Me
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

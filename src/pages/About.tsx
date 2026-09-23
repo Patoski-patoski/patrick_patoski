@@ -220,11 +220,19 @@ const About = () => {
             <div className="detail-item">
               <h3>EDUCATION</h3>
               <p>B.S. in Biotechnology</p>
-              <p className="detail-subtext">Ebonyi State University, 2019</p><br />
-              <p>Online Training and Bootcamps: Full-Stack Web Development</p>
-              
-              <p className="detail-subtext">ALX-Africa, 2022-2023</p>
-              <br /> {/* Added line break for better spacing */}
+              <p className="detail-subtext">Ebonyi State University, 2019</p>
+            </div>
+
+            <div className="detail-item">
+              <h3>CERTIFICATIONS</h3>
+              <p>Solana/Rust Developer — Encode</p>
+              <p className="detail-subtext">Issued November 2025</p>
+              <p>ALX Software Engineering (Backend)</p>
+              <p className="detail-subtext">Issued 2024</p>
+              <p>ALX AI Starter Kit</p>
+              <p className="detail-subtext">Issued 2025</p>
+              <p>Full-Stack Web Development — Zuri x I4G</p>
+              <p className="detail-subtext">Issued 2022</p>
             </div>
           </div>
         </div>

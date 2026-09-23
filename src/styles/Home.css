@@ -137,6 +137,30 @@
     line-height: 1.6;
 }
 
+.business-section {
+    padding: 3rem 2rem;
+    margin-top: 2rem;
+    text-align: center;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.business-description {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 0 auto 2rem;
+}
+
+.business-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
 @media (max-width: 992px) {
     .services-grid {
         grid-template-columns: repeat(2, 1fr);

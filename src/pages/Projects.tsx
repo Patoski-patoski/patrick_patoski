@@ -22,7 +22,7 @@ const Projects = () => {
       description:
         "Enterprise IoT hospitality platform (in active development) — I own the NestJS/Bun backend: MQTT mTLS ingestion at <50ms, emergency alert engine over Socket.IO, room lifecycle FSMs, 6-tier RBAC, and Prisma/PostgreSQL persistence.",
       technologies: ["NestJS", "Bun", "MQTT", "PostgreSQL", "Prisma", "Socket.IO"],
-      image: "/iot.png",
+      image: "/iot.webp",
       status: "In Progress",
     },
     {
@@ -31,7 +31,7 @@ const Projects = () => {
       description:
         "Decentralized copy-trading platform on Solana — Master/Copier vaults via Anchor PDAs, real-time Helius indexer, tiered leaderboards and execution engine.",
       technologies: ["Solana", "Anchor", "Rust", "Express", "Prisma", "React"],
-      image: "/zephyr.png",
+      image: "/zephyr.webp",
       live: "https://app.zephyrlabs.gg/",
     },
     {
@@ -50,12 +50,12 @@ const Projects = () => {
       description:
         "Autonomous on-chain risk oracle for AI trading agents — CognoDB graph detection of wash rings, Sybil farms and peeling chains, monetized via HTTP 402 Moove micro-payments.",
       technologies: ["NestJS", "Bun", "CognoDB", "Solana", "x402", "React"],
-      image: "/sentinel.png",
+      image: "/sentinel.webp",
       github: "https://github.com/Patoski-patoski/sentinel-oracle",
     },
     {
       id: 1,
-      title: "MemeStram Agent",
+      title: "MemeStream Agent",
       description:
         " AI-powered agent built with the Mastra framework that allows users to search for internet memes, retrieve meme templates, and get engaging descriptions and usage information about popular memes.",
       technologies: [

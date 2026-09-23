@@ -260,6 +260,32 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      <div className="share-section">
+        <h2 className="share-title">Share my profile</h2>
+        <p className="share-subtitle">
+          Forwardable intro cards — tap any card to open the full image, then
+          share it on WhatsApp or LinkedIn.
+        </p>
+        <div className="share-grid">
+          {[
+            { src: "/cards/card-1-identity.png", label: "Intro card" },
+            { src: "/cards/card-2-stack.png", label: "What I offer" },
+            { src: "/cards/card-3-business.png", label: "Websites for business" },
+          ].map((card) => (
+            <a
+              key={card.src}
+              href={card.src}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="share-card"
+            >
+              <img src={card.src} alt={card.label} loading="lazy" />
+              <span className="share-label">{card.label}</span>
+            </a>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

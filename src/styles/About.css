@@ -203,6 +203,56 @@
     overflow-wrap: anywhere;
 }
 
+.share-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+}
+
+.share-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.share-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.share-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.share-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.share-card:hover {
+    transform: translateY(-4px);
+}
+
+.share-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.share-label {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
 @media (max-width: 992px) {
     .about-content {
         grid-template-columns: 1fr;
@@ -238,5 +288,9 @@
 
     .profile-section {
         padding: 1.5rem;
+    }
+
+    .share-grid {
+        grid-template-columns: 1fr;
     }
 }

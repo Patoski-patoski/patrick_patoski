@@ -95,7 +95,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 4,
-    title: "Vybe Telegram Crypto Bot",
+    title: "Vybe Crypto Telemetry Bot",
     category: "Solana & Web3",
     description:
       "Real-time crypto telemetry bot powered by Vybe APIs. Provides instant whale alert notifications, token metrics, and seamless deep-linking to AlphaVybe analytics.",

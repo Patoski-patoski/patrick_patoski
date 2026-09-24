@@ -204,7 +204,7 @@ const Contact = () => {
                   onClick={mailtoFallback}
                   className="fallback-email-btn"
                 >
-                  Send directly via Email App ✉️
+                  Send directly via Email App
                 </button>
               </div>
             )}

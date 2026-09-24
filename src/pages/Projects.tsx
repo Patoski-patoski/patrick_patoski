@@ -84,7 +84,7 @@ const Projects = () => {
               onClick={() => setSearchQuery("")}
               aria-label="Clear search"
             >
-              ✕
+              ×
             </button>
           )}
         </div>
@@ -128,7 +128,6 @@ const Projects = () => {
 
                 {project.metric && (
                   <div className="project-metric-chip">
-                    <span className="metric-icon">⚡</span>
                     <span className="metric-text">{project.metric}</span>
                   </div>
                 )}

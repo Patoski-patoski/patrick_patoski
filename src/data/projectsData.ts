@@ -54,7 +54,7 @@ export const projectsData: Project[] = [
     metric: "<50ms Ingestion • 95%+ Coverage",
     description:
       "Enterprise IoT hospitality platform. Engineered the NestJS/Bun cloud backend with AWS IoT Core mutual TLS (mTLS) telemetry ingestion, sub-second emergency broadcast over Socket.IO, room lifecycle FSMs, and 6-tier RBAC.",
-    technologies: ["NestJS", "Bun", "MQTT", "PostgreSQL", "Prisma", "Socket.IO"],
+    technologies: ["NestJS", "Bun", "MQTT", "PostgreSQL", "AWS", "Socket.IO"],
     image: "/iot.webp",
     status: "In Progress",
   },
@@ -66,7 +66,7 @@ export const projectsData: Project[] = [
     metric: "Sybil-Proof Escrow Vaults",
     description:
       "Decentralized survey and bounties platform on Solana. Built Anchor-based escrow programs holding SOL rewards, automated wallet-age & funding graph Sybil verification, on-chain reputation badges, and weighted payouts.",
-    technologies: ["Solana", "Anchor", "NestJS", "MongoDB", "React"],
+    technologies: ["Solana", "Anchor", "Rust", "NestJS", "MongoDB", "React"],
     image: "/okaform.svg",
     github: "https://github.com/Patoski-patoski/okaform",
     live: "https://okaform.vercel.app",
@@ -78,7 +78,7 @@ export const projectsData: Project[] = [
     category: "AI & Automation",
     description:
       "Autonomous multimodal agent built with the Mastra framework and Nosana decentralized compute. Searches internet memes, retrieves templates, and delivers contextual humor analysis and usage metadata.",
-    technologies: ["Playwright", "Mastra", "Nosana", "TypeScript", "Redis"],
+    technologies: ["Mastra", "Gemini AI", "Nosana", "TypeScript", "Playwright", "Redis"],
     image: "/meme.jpg",
     github: "https://github.com/Patoski-patoski/MemeStream-Agent",
   },
@@ -89,17 +89,17 @@ export const projectsData: Project[] = [
     metric: "2,000+ Community Queries",
     description:
       "Automated X (Twitter) security bot performing real-time account trustworthiness analysis, contract safety verification, and risk auditing for the Solana DeFi ecosystem.",
-    technologies: ["Python", "Twitter(X) API", "Crypto API", "Docker"],
+    technologies: ["Python", "Twitter(X) API", "NLP", "Solana"],
     image: "/xbot.jpg",
     github: "https://github.com/Patoski-patoski/twitter_bot_projectruggaurd",
   },
   {
     id: 4,
     title: "Vybe Telegram Crypto Bot",
-    category: "Backend & IoT",
+    category: "Solana & Web3",
     description:
       "Real-time crypto telemetry bot powered by Vybe APIs. Provides instant whale alert notifications, token metrics, and seamless deep-linking to AlphaVybe analytics.",
-    technologies: ["Telegram API", "Redis", "Node.js", "Express", "TypeScript"],
+    technologies: ["Telegram API", "Node.js", "Express", "Vybe API", "TypeScript"],
     image: "/vybe.jpg",
     github: "https://github.com/Patoski-patoski/vybe_telegram_cryptobot",
   },
@@ -109,7 +109,7 @@ export const projectsData: Project[] = [
     category: "Solana & Web3",
     description:
       "Solana portfolio dashboard allowing users to track multi-account balances, inspect transaction histories, and execute token transfers with real-time price feeds.",
-    technologies: ["Solana Web3", "Next.js", "Express", "TypeScript"],
+    technologies: ["Solana", "Next.js", "Express", "TypeScript"],
     image: "/soldash.jpg",
     github: "https://github.com/patoski-patoski/soldash",
   },

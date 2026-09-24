@@ -224,7 +224,7 @@ const About = () => {
       link.click();
       output = (
         <p className="terminal-success">
-          ✓ Resume download initiated (Patrick_Okafor_Resume.pdf).
+          Resume download initiated (Patrick_Okafor_Resume.pdf).
         </p>
       );
     } else if (lower === "projects") {
@@ -314,7 +314,7 @@ const About = () => {
         id: "holo-pass",
         type: "holographic" as const,
         tabName: "Digital Dev Pass",
-        icon: "💎",
+        icon: "01",
         title: "Patrick Okafor — On-Chain & Systems Developer Pass",
         audience: "Recruiters, founders & engineering leaders reviewing core credentials.",
         pitch: `Check out Patrick Okafor's Developer Pass — Lead Backend & Solana Engineer (Rust, Anchor, NestJS, IoT): https://patrick-patoski.vercel.app/about`,
@@ -323,7 +323,7 @@ const About = () => {
         id: "card-intro",
         type: "image" as const,
         tabName: "Executive Intro",
-        icon: "📇",
+        icon: "02",
         title: "Executive Intro Card",
         audience: "Recruiters, hiring managers & investors reviewing engineering scope.",
         src: "/cards/card-1-identity.png",
@@ -333,7 +333,7 @@ const About = () => {
         id: "card-stack",
         type: "image" as const,
         tabName: "Deep Stack",
-        icon: "⚡",
+        icon: "03",
         title: "Technical Stack & Architecture",
         audience: "CTOs, VP of Engineering & Solana/Rust technical leads.",
         src: "/cards/card-2-stack.png",
@@ -343,7 +343,7 @@ const About = () => {
         id: "card-business",
         type: "image" as const,
         tabName: "Web & Consulting",
-        icon: "💼",
+        icon: "04",
         title: "Business & Web Solutions",
         audience: "Founders, e-commerce brands & clients needing fast web applications.",
         src: "/cards/card-3-business.png",
@@ -560,7 +560,7 @@ const About = () => {
           {/* Toast Notification */}
           {copiedToast && (
             <div className="share-toast" role="alert">
-              ✓ {copiedToast}
+              {copiedToast}
             </div>
           )}
         </div>
@@ -639,7 +639,7 @@ const About = () => {
                         alt="Patrick Okafor"
                         className="holo-avatar"
                       />
-                      <span className="holo-status-icon">✓</span>
+                      <span className="holo-status-dot" aria-hidden="true" />
                     </div>
                     <div className="holo-info">
                       <span className="holo-label">VERIFIED SMART CONTRACT & BACKEND ENGINEER</span>
@@ -716,7 +716,7 @@ const About = () => {
               onClick={copySharePitch}
               title="Copy intro message and portfolio link"
             >
-              📋 Copy Pitch & Link
+              Copy Pitch & Link
             </button>
 
             <a
